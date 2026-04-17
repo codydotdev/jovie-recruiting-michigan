@@ -1,0 +1,174 @@
+---
+const steps = [
+  {
+    number: "01",
+    label: "Apply",
+    description:
+      "Fill out a short application online. Tell us about your experience, your availability, and what you're looking for in a family.",
+  },
+  {
+    number: "02",
+    label: "Interview",
+    description:
+      "A member of our local Michigan team will reach out to get to know you. We'll talk schedule, skills, and what kind of placement fits you best.",
+  },
+  {
+    number: "03",
+    label: "Get Matched",
+    description:
+      "We find a vetted family whose needs match your schedule and strengths. No cold searching, no awkward direct messages on an app.",
+  },
+  {
+    number: "04",
+    label: "Start Working",
+    description:
+      "Once you're matched, you're ready to go. Show up, connect with the kids, and start earning $14/hr or more doing work that matters.",
+  },
+];
+---
+
+<section
+  id="how-it-works"
+  style="background-color: #143A4E; padding: clamp(4rem, 8vw, 7rem) 0;"
+>
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <span class="overline reveal" style="margin-bottom: 1rem;">
+        The Process
+      </span>
+      <h2
+        class="reveal"
+        style="
+          font-family: var(--font-display);
+          font-weight: 700;
+          font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+          letter-spacing: -0.02em;
+          color: #FAFAF8;
+          margin: 0.75rem 0 1rem 0;
+          line-height: 1.15;
+        "
+      >
+        Four Steps to Your First Jovie Placement
+      </h2>
+      <p
+        class="reveal"
+        style="
+          font-size: 1.0625rem;
+          line-height: 1.75;
+          color: #A8C4CC;
+          max-width: 34rem;
+          margin: 0 auto;
+        "
+      >
+        Applying is simple. We move fast, and we're with you every step of the way.
+      </p>
+    </div>
+
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        position: relative;
+      "
+    >
+      {steps.map((step, i) => (
+        <div
+          class="reveal"
+          style={`
+            padding: 0 1.5rem;
+            text-align: center;
+            position: relative;
+            transition-delay: ${i * 100}ms;
+          `}
+        >
+          {i < steps.length - 1 && (
+            <div
+              aria-hidden="true"
+              style="
+                position: absolute;
+                top: 2.1rem;
+                right: -0.5px;
+                width: 100%;
+                height: 1px;
+                border-top: 1px dashed rgba(140, 213, 223, 0.3);
+                left: 50%;
+                z-index: 0;
+              "
+            ></div>
+          )}
+
+          <div
+            style="
+              font-family: var(--font-display);
+              font-weight: 800;
+              font-size: 3.5rem;
+              color: #8CD5DF;
+              line-height: 1;
+              margin-bottom: 1rem;
+              position: relative;
+              z-index: 1;
+            "
+          >
+            {step.number}
+          </div>
+
+          <h3
+            style="
+              font-family: var(--font-display);
+              font-weight: 700;
+              font-size: 1.125rem;
+              color: #FAFAF8;
+              margin: 0 0 0.75rem 0;
+            "
+          >
+            {step.label}
+          </h3>
+
+          <p
+            style="
+              font-size: 0.9375rem;
+              line-height: 1.7;
+              color: #A8C4CC;
+              margin: 0;
+            "
+          >
+            {step.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    #how-it-works [style*="grid-template-columns: repeat(4"] {
+      grid-template-columns: 1fr !important;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #how-it-works [style*="text-align: center; position: relative"] {
+      padding: 0 0 2.5rem 0 !important;
+      border-left: 2px solid rgba(140, 213, 223, 0.3);
+      text-align: left !important;
+      padding-left: 1.75rem !important;
+    }
+    #how-it-works [style*="position: absolute; top: 2.1rem"] {
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('#how-it-works .reveal').forEach(el => observer.observe(el));
+</script>

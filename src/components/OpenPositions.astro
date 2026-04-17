@@ -1,0 +1,179 @@
+---
+const positions = [
+  {
+    badge: "Full-Time",
+    title: "Full-Time Nanny",
+    pay: "Starting at $14/hr",
+    description:
+      "Build a real career with a consistent schedule and a family you'll grow to love. Full benefits, reliable weekly income, and a team that supports you every step of the way.",
+  },
+  {
+    badge: "Part-Time",
+    title: "Part-Time Nanny",
+    pay: "Starting at $14/hr",
+    description:
+      "Consistent work with the same family on a schedule that still leaves room for the rest of your life. A great fit if you're returning to work or balancing other commitments.",
+  },
+  {
+    badge: "Flexible",
+    title: "On-Call Babysitter",
+    pay: "Starting at $14/hr",
+    description:
+      "Pick up shifts when you're available — evenings, weekends, or whenever works for you. Ideal for students or anyone who wants extra income without a fixed schedule.",
+  },
+];
+---
+
+<section
+  id="open-positions"
+  style="background-color: #1A475E; padding: clamp(4rem, 8vw, 7rem) 0;"
+>
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <span class="overline reveal" style="margin-bottom: 1rem;">
+        Open Positions
+      </span>
+      <h2
+        class="reveal"
+        style="
+          font-family: var(--font-display);
+          font-weight: 700;
+          font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+          letter-spacing: -0.02em;
+          color: #FAFAF8;
+          margin: 0.75rem 0 1rem 0;
+          line-height: 1.15;
+        "
+      >
+        Nanny and Babysitter Jobs<br />Across Southeast Michigan
+      </h2>
+      <p
+        class="reveal"
+        style="
+          font-size: 1.0625rem;
+          line-height: 1.75;
+          color: #A8C4CC;
+          max-width: 38rem;
+          margin: 0 auto;
+        "
+      >
+        Whether you want consistent weekly hours with one family or flexible shifts
+        when it works for you, there's a position at Jovie that fits your life.
+        All positions start at $14/hr with full benefits.
+      </p>
+    </div>
+
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      "
+    >
+      {positions.map((pos, i) => (
+        <div
+          class="reveal"
+          style={`
+            background-color: #FFFFFF;
+            border-radius: 1.25rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.2s ease-out;
+            transition-delay: ${i * 80}ms;
+          `}
+        >
+          <div style="height: 6px; background-color: #143A4E;"></div>
+
+          <div style="padding: 1.75rem; flex: 1; display: flex; flex-direction: column;">
+            <span
+              style="
+                display: inline-block;
+                background-color: #EBF7F9;
+                color: #1A475E;
+                font-family: var(--font-label);
+                font-weight: 600;
+                font-size: 0.7rem;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                padding: 0.25rem 0.75rem;
+                border-radius: 2rem;
+                margin-bottom: 1rem;
+                width: fit-content;
+              "
+            >
+              {pos.badge}
+            </span>
+
+            <h3
+              style="
+                font-family: var(--font-display);
+                font-weight: 600;
+                font-size: 1.25rem;
+                color: #1A2E38;
+                margin: 0 0 0.5rem 0;
+              "
+            >
+              {pos.title}
+            </h3>
+
+            <p
+              style="
+                font-family: var(--font-display);
+                font-weight: 700;
+                font-size: 1.5rem;
+                color: #F26B21;
+                margin: 0 0 1rem 0;
+              "
+            >
+              {pos.pay}
+            </p>
+
+            <p
+              style="
+                font-size: 0.9375rem;
+                line-height: 1.7;
+                color: #4A6572;
+                margin: 0 0 1.75rem 0;
+                flex: 1;
+              "
+            >
+              {pos.description}
+            </p>
+
+            <button
+              class="btn-primary"
+              data-open-modal
+              style="margin-top: auto; width: 100%; text-align: center; cursor: pointer;"
+            >
+              Apply Now
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 900px) {
+    #open-positions [style*="grid-template-columns: repeat(3"] {
+      grid-template-columns: 1fr !important;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('#open-positions .reveal').forEach(el => observer.observe(el));
+</script>

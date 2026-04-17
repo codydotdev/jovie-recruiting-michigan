@@ -1,0 +1,131 @@
+---
+const logoURL = "https://www.jovie.com/app/uploads/2025/04/Jovie_TaglineLogo_NannySitters_CMYK-2-1536x730-min.png";
+---
+
+<footer style="background-color: #143A4E;">
+  <div
+    class="container"
+    style="padding-top: 3.5rem; padding-bottom: 3.5rem;"
+  >
+    <div
+      style="
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 3rem;
+        align-items: center;
+      "
+    >
+      <div>
+        <a href="/" aria-label="Jovie of Ann Arbor — Home">
+          <img
+            src={logoURL}
+            alt="Jovie — nannies + sitters"
+            loading="lazy"
+            style="height: 40px; width: auto; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.9;"
+          />
+        </a>
+        <p
+          style="
+            font-size: 0.8125rem;
+            color: #A8C4CC;
+            margin: 0.75rem 0 0 0;
+            line-height: 1.5;
+          "
+        >
+          Locally owned. Nationally backed.<br />Hiring now in southeast Michigan.
+        </p>
+      </div>
+
+      <div style="text-align: center;">
+        <address
+          style="
+            font-style: normal;
+            font-size: 0.875rem;
+            color: #A8C4CC;
+            line-height: 2;
+          "
+        >
+          <div>Ann Arbor, MI</div>
+          <div>
+            <a
+              href="mailto:AnnArborMI@jovie.com"
+              style="color: #8CD5DF; text-decoration: none;"
+            >
+              AnnArborMI@jovie.com
+            </a>
+          </div>
+          <div>Mon–Fri 9:00am–6:00pm &nbsp;&middot;&nbsp; Sat–Sun Closed</div>
+        </address>
+      </div>
+
+      <div style="text-align: right;">
+        <a
+          href="https://www.jovie.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="
+            display: inline-block;
+            font-family: var(--font-label);
+            font-weight: 600;
+            font-size: 0.8125rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #8CD5DF;
+            text-decoration: none;
+            border: 1px solid rgba(140, 213, 223, 0.3);
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.375rem;
+            transition: border-color 0.2s, color 0.2s;
+          "
+        >
+          Visit Jovie.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top: 1px solid rgba(255,255,255,0.08);">
+    <div
+      class="container"
+      style="
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      "
+    >
+      <p style="font-size: 0.8125rem; color: #4A6572; margin: 0;">
+        &copy; 2026 Jovie of Ann Arbor. Locally owned and operated franchise of Jovie.
+      </p>
+      <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;">
+        <p style="font-size: 0.8125rem; color: #4A6572; margin: 0;">
+          Serving Ann Arbor, Ypsilanti, Saline, Chelsea, Canton &amp; southeast Michigan
+        </p>
+        <a
+          href="/privacy"
+          style="font-size: 0.8125rem; color: #4A6572; text-decoration: none; opacity: 0.7; transition: opacity 0.2s;"
+          onmouseover="this.style.opacity='1'"
+          onmouseout="this.style.opacity='0.7'"
+        >Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  @media (max-width: 768px) {
+    footer [style*="grid-template-columns: auto 1fr auto"] {
+      grid-template-columns: 1fr !important;
+      text-align: center !important;
+    }
+    footer [style*="text-align: right"] {
+      text-align: center !important;
+    }
+    footer address {
+      text-align: center !important;
+    }
+  }
+</style>

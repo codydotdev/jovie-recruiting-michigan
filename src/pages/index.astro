@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import WhyJovie from '../components/WhyJovie.astro';
+import OpenPositions from '../components/OpenPositions.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Benefits from '../components/Benefits.astro';
+import About from '../components/About.astro';
+import ApplyCTA from '../components/ApplyCTA.astro';
+import Footer from '../components/Footer.astro';
+import ApplicationModal from '../components/ApplicationModal.astro';
+import '../styles/global.css';
+
+const title = "Nanny & Babysitter Jobs in Ann Arbor, MI | Southeast Michigan | Jovie";
+const description = "Looking for nanny or babysitter jobs in Ann Arbor, Ypsilanti, or southeast Michigan? Jovie is hiring flexible, rewarding caregiving positions starting at $14/hr with great benefits.";
+---
+
+<Layout title={title} description={description}>
+  <Nav />
+  <main>
+    <Hero />
+    <WhyJovie />
+    <OpenPositions />
+    <HowItWorks />
+    <Benefits />
+    <About />
+    <ApplyCTA />
+  </main>
+  <Footer />
+  <ApplicationModal />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "EmploymentAgency",
+        "name": "Jovie of Ann Arbor",
+        "url": "https://jovierecruiting.com",
+        "email": "AnnArborMI@jovie.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ann Arbor",
+          "addressRegion": "MI",
+          "addressCountry": "US"
+        },
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "areaServed": [
+          "Ann Arbor, MI", "Ypsilanti, MI", "Saline, MI", "Chelsea, MI",
+          "Dexter, MI", "Canton, MI", "Plymouth, MI", "Northville, MI"
+        ],
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Jovie",
+          "url": "https://www.jovie.com"
+        }
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Full-Time Nanny",
+        "description": "Build a real career with a consistent schedule and a family you'll grow to love. Full benefits, reliable weekly income, and a team that supports you every step of the way.",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Jovie of Ann Arbor",
+          "sameAs": "https://jovierecruiting.com"
+        },
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ann Arbor",
+            "addressRegion": "MI",
+            "addressCountry": "US"
+          }
+        },
+        "employmentType": "FULL_TIME",
+        "baseSalary": {
+          "@type": "MonetaryAmount",
+          "currency": "USD",
+          "value": {
+            "@type": "QuantitativeValue",
+            "minValue": 14,
+            "unitText": "HOUR"
+          }
+        },
+        "directApply": true
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Part-Time Nanny",
+        "description": "Consistent work with the same family on a schedule that still leaves room for the rest of your life.",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Jovie of Ann Arbor",
+          "sameAs": "https://jovierecruiting.com"
+        },
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ann Arbor",
+            "addressRegion": "MI",
+            "addressCountry": "US"
+          }
+        },
+        "employmentType": "PART_TIME",
+        "baseSalary": {
+          "@type": "MonetaryAmount",
+          "currency": "USD",
+          "value": {
+            "@type": "QuantitativeValue",
+            "minValue": 14,
+            "unitText": "HOUR"
+          }
+        },
+        "directApply": true
+      },
+      {
+        "@type": "JobPosting",
+        "title": "On-Call Babysitter",
+        "description": "Pick up shifts when you're available — evenings, weekends, or whenever works for you.",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Jovie of Ann Arbor",
+          "sameAs": "https://jovierecruiting.com"
+        },
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ann Arbor",
+            "addressRegion": "MI",
+            "addressCountry": "US"
+          }
+        },
+        "employmentType": "OTHER",
+        "baseSalary": {
+          "@type": "MonetaryAmount",
+          "currency": "USD",
+          "value": {
+            "@type": "QuantitativeValue",
+            "minValue": 14,
+            "unitText": "HOUR"
+          }
+        },
+        "directApply": true
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What qualifications do I need to apply for nanny jobs at Jovie in Ann Arbor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You need to be at least 18 years old and have some experience working with children. A high school diploma or equivalent is required. Jovie covers the cost of Adult and Pediatric CPR, First Aid, and AED certification."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much do Jovie nannies and babysitters earn in southeast Michigan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All Jovie positions in Ann Arbor and surrounding southeast Michigan communities pay starting at $14 per hour."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to find my own families to work with?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Jovie handles all family matching. You tell us your schedule, your experience, and your preferences, and we connect you with vetted families."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are babysitter and nanny jobs available outside of Ann Arbor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Jovie of Ann Arbor places caregivers with families throughout southeast Michigan, including Ypsilanti, Saline, Chelsea, Dexter, Canton, Plymouth, Northville, and surrounding communities."
+            }
+          }
+        ]
+      }
+    ]
+  })} />
+</Layout>

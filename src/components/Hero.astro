@@ -1,0 +1,97 @@
+---
+---
+
+<section
+  id="hero"
+  style="
+    position: relative;
+    min-height: 100dvh;
+    background-color: #1A475E;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 70px;
+  "
+>
+  <div class="container" style="position: relative; z-index: 1; width: 100%;">
+    <div style="max-width: 52rem;">
+      <span class="overline reveal" style="margin-bottom: 1.25rem;">
+        Now Hiring in Southeast Michigan
+      </span>
+
+      <h1
+        class="reveal"
+        style="
+          font-family: var(--font-display);
+          font-weight: 800;
+          font-size: clamp(2.5rem, 5vw, 4.5rem);
+          line-height: 1.05;
+          letter-spacing: -0.03em;
+          color: #FAFAF8;
+          margin: 0 0 1.5rem 0;
+        "
+      >
+        Nanny and Babysitter Jobs<br />
+        in <span style="color: #F26B21;">Ann Arbor, Michigan</span>
+      </h1>
+
+      <p
+        class="reveal"
+        style="
+          font-family: var(--font-body);
+          font-size: clamp(1.0625rem, 1.75vw, 1.25rem);
+          line-height: 1.75;
+          color: #A8C4CC;
+          margin: 0 0 2.5rem 0;
+          max-width: 38rem;
+        "
+      >
+        Earn starting at $14/hr doing work you love, on a schedule that fits your life.
+        Jovie matches you with great families in Ann Arbor, Ypsilanti, Saline, and beyond,
+        and handles the benefits so you can focus on the kids.
+      </p>
+
+      <div
+        class="reveal"
+        style="
+          display: flex;
+          margin-top: 2.5rem;
+        "
+      >
+        <button class="btn-primary" data-open-modal style="font-size: 1.0625rem; padding: 1rem 2rem;">
+          Apply Now
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    #hero .container > div {
+      max-width: 100% !important;
+      text-align: center;
+    }
+    #hero .container > div p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #hero .container > div > div:last-child {
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('#hero .reveal').forEach(el => observer.observe(el));
+</script>

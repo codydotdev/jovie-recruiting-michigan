@@ -1,0 +1,127 @@
+---
+const cards = [
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8CD5DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+    title: "You Set Your Schedule",
+    body: "Full-time, part-time, or on-call — you tell us your availability and we build your schedule around it. Your time is yours.",
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8CD5DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+    title: "Starting at $14/hr, Every Time",
+    body: "No surge pricing, no guessing. You know exactly what you'll earn before you say yes to any placement.",
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8CD5DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    title: "A Local Michigan Team Behind You",
+    body: "Our Ann Arbor team runs a hands-on, people-first operation. You'll know who to call, and they'll know who you are.",
+  },
+];
+---
+
+<section
+  id="why-jovie"
+  style="background-color: #FAFAF8; padding: clamp(4rem, 8vw, 7rem) 0;"
+>
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <span class="overline reveal" style="color: #8CD5DF; margin-bottom: 1rem;">
+        Why Work With Jovie
+      </span>
+      <h2
+        class="reveal"
+        style="
+          font-family: var(--font-display);
+          font-weight: 700;
+          font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+          letter-spacing: -0.02em;
+          color: #1A2E38;
+          margin: 0.75rem 0 1rem 0;
+          line-height: 1.15;
+        "
+      >
+        More Than a Gig.<br />A Job Worth Having.
+      </h2>
+      <p
+        class="reveal"
+        style="
+          font-size: 1.0625rem;
+          line-height: 1.75;
+          color: #4A6572;
+          max-width: 38rem;
+          margin: 0 auto;
+        "
+      >
+        Most childcare apps leave you to figure it out on your own. Jovie does it differently.
+        You get a real employer with real benefits, a local Michigan team that knows your name,
+        and families who are vetted before you ever meet them.
+      </p>
+    </div>
+
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      "
+    >
+      {cards.map((card, i) => (
+        <div
+          class="card reveal"
+          style={`transition-delay: ${i * 80}ms;`}
+        >
+          <div
+            style="margin-bottom: 1.25rem;"
+            set:html={card.icon}
+          />
+          <h3
+            style="
+              font-family: var(--font-display);
+              font-weight: 600;
+              font-size: 1.125rem;
+              color: #1A2E38;
+              margin: 0 0 0.625rem 0;
+              line-height: 1.3;
+            "
+          >
+            {card.title}
+          </h3>
+          <p
+            style="
+              font-size: 0.9375rem;
+              line-height: 1.7;
+              color: #4A6572;
+              margin: 0;
+            "
+          >
+            {card.body}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 900px) {
+    #why-jovie [style*="grid-template-columns: repeat(3"] {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+  @media (max-width: 600px) {
+    #why-jovie [style*="grid-template-columns: repeat(3"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('#why-jovie .reveal').forEach(el => observer.observe(el));
+</script>

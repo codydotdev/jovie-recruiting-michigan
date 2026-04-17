@@ -1,0 +1,141 @@
+---
+const benefits = [
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8CD5DF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    title: "Liability Insurance",
+    description: "You're protected on the job. Jovie carries liability insurance so you can focus on the kids, not the what-ifs.",
+  },
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8CD5DF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.7 19.79 19.79 0 0 1 1.62 4.1 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
+    title: "TeleHealth Benefits",
+    description: "Access to telehealth services as part of your employment. Real healthcare support, not an afterthought.",
+  },
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8CD5DF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+    title: "Unemployment Insurance",
+    description: "Covered by Jovie. If your placement changes, you have a safety net while you transition to your next family.",
+  },
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8CD5DF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>`,
+    title: "Workers Compensation",
+    description: "You're covered if anything happens on the job. That's what a real employer does.",
+  },
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8CD5DF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+    title: "CPR/FA/AED Certification",
+    description: "Jovie covers the cost and coordinates your Adult and Pediatric CPR, First Aid, and AED certification. No out-of-pocket cost to you.",
+  },
+];
+---
+
+<section
+  id="benefits"
+  style="background-color: #EBF7F9; padding: clamp(4rem, 8vw, 7rem) 0;"
+>
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <span class="overline reveal" style="color: #1A475E; margin-bottom: 1rem;">
+        What You Get
+      </span>
+      <h2
+        class="reveal"
+        style="
+          font-family: var(--font-display);
+          font-weight: 700;
+          font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+          letter-spacing: -0.02em;
+          color: #1A2E38;
+          margin: 0.75rem 0 1rem 0;
+          line-height: 1.15;
+        "
+      >
+        The Benefits That Come<br />With Every Jovie Position
+      </h2>
+      <p
+        class="reveal"
+        style="
+          font-size: 1.0625rem;
+          line-height: 1.75;
+          color: #4A6572;
+          max-width: 38rem;
+          margin: 0 auto;
+        "
+      >
+        Every position at Jovie — full-time, part-time, or on-call — comes with
+        a benefits package most childcare jobs don't offer. You bring the care.
+        We handle everything else.
+      </p>
+    </div>
+
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      "
+    >
+      {benefits.map((benefit, i) => (
+        <div
+          class="reveal"
+          style={`
+            background-color: #FFFFFF;
+            border: 1px solid #E5E9EB;
+            border-radius: 1.25rem;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            transition-delay: ${i * 80}ms;
+          `}
+        >
+          <div style="margin-bottom: 1rem;" set:html={benefit.icon} />
+          <h3
+            style="
+              font-family: var(--font-display);
+              font-weight: 600;
+              font-size: 1.0625rem;
+              color: #1A2E38;
+              margin: 0 0 0.5rem 0;
+            "
+          >
+            {benefit.title}
+          </h3>
+          <p
+            style="
+              font-size: 0.9375rem;
+              line-height: 1.7;
+              color: #4A6572;
+              margin: 0;
+            "
+          >
+            {benefit.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 900px) {
+    #benefits [style*="grid-template-columns: repeat(3"] {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+  @media (max-width: 560px) {
+    #benefits [style*="grid-template-columns: repeat(3"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('#benefits .reveal').forEach(el => observer.observe(el));
+</script>

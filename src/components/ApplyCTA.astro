@@ -1,0 +1,71 @@
+---
+---
+
+<section
+  id="apply"
+  style="background-color: #1A475E; padding: clamp(5rem, 10vw, 8rem) 0;"
+>
+  <div class="container" style="text-align: center;">
+    <span class="overline reveal" style="margin-bottom: 1.25rem; display: block;">
+      Ready to Get Started
+    </span>
+
+    <h2
+      class="reveal"
+      style="
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(1.875rem, 4vw, 3rem);
+        letter-spacing: -0.025em;
+        color: #FAFAF8;
+        margin: 0.75rem 0 1.25rem 0;
+        line-height: 1.1;
+      "
+    >
+      Apply for Nanny and Babysitter<br />Jobs in Ann Arbor Today
+    </h2>
+
+    <p
+      class="reveal"
+      style="
+        font-size: 1.125rem;
+        line-height: 1.75;
+        color: #A8C4CC;
+        max-width: 36rem;
+        margin: 0 auto 2.5rem auto;
+      "
+    >
+      Positions are open right now in Ann Arbor, Ypsilanti, Saline, and across southeast Michigan.
+      Pick your schedule, choose your families, and work with a team that actually has your back.
+    </p>
+
+    <div
+      class="reveal"
+      style="
+        display: flex;
+        justify-content: center;
+        margin-top: 2.5rem;
+      "
+    >
+      <button
+        class="btn-primary"
+        data-open-modal
+        style="font-size: 1.0625rem; padding: 1rem 2.25rem; cursor: pointer;"
+      >
+        Apply Now
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('#apply .reveal').forEach(el => observer.observe(el));
+</script>

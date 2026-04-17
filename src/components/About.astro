@@ -1,0 +1,111 @@
+---
+const aboutImage = "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&q=80&auto=format&fit=crop";
+---
+
+<section
+  id="about"
+  style="background-color: #FAFAF8; padding: clamp(4rem, 8vw, 7rem) 0;"
+>
+  <div class="container">
+    <div
+      style="
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(2.5rem, 5vw, 5rem);
+        align-items: center;
+      "
+    >
+      <div class="reveal" style="position: relative;">
+        <img
+          src={aboutImage}
+          alt="A Jovie caregiver working with a child in Ann Arbor"
+          loading="lazy"
+          style="
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            border-radius: 1.5rem;
+          "
+        />
+        <div
+          aria-hidden="true"
+          style="
+            position: absolute;
+            bottom: -1.25rem;
+            right: -1.25rem;
+            width: 8rem;
+            height: 8rem;
+            background-color: #8CD5DF;
+            border-radius: 1.25rem;
+            z-index: -1;
+          "
+        ></div>
+      </div>
+
+      <div>
+        <span class="overline reveal" style="color: #8CD5DF; margin-bottom: 1rem; display: block;">
+          About Jovie of Ann Arbor
+        </span>
+        <h2
+          class="reveal"
+          style="
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            letter-spacing: -0.02em;
+            color: #1A2E38;
+            margin: 0.75rem 0 1.5rem 0;
+            line-height: 1.15;
+          "
+        >
+          A Locally Owned Nanny Agency Serving Southeast Michigan
+        </h2>
+
+        <div class="reveal">
+          <p style="font-size: 1.0625rem; line-height: 1.75; color: #4A6572; margin: 0 0 1.25rem 0;">
+            Jovie of Ann Arbor is a locally owned and operated franchise of the Jovie brand, a nationally
+            recognized nanny and babysitter employer. We place caregivers with families across
+            Ann Arbor, Ypsilanti, Saline, Chelsea, Dexter, Canton, Plymouth, and the surrounding
+            southeast Michigan area. Every family we work with is vetted before you ever meet them.
+          </p>
+          <p style="font-size: 1.0625rem; line-height: 1.75; color: #4A6572; margin: 0 0 1.25rem 0;">
+            Our local team understands what Michigan families need and what Michigan caregivers deserve.
+            We handle the logistics, the vetting, and the benefits so you can focus on what you do best
+            — caring for kids.
+          </p>
+          <p style="font-size: 1.0625rem; line-height: 1.75; color: #4A6572; margin: 0;">
+            As part of the national Jovie network, you get the backing of a trusted brand with deep
+            roots in the childcare industry, plus the personal attention of a small local team.
+            That combination is hard to find anywhere else in Michigan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    #about [style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+    #about [style*="position: absolute; bottom: -1.25rem"] {
+      display: none;
+    }
+    #about img {
+      aspect-ratio: 16/9 !important;
+    }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('#about .reveal').forEach(el => observer.observe(el));
+</script>
